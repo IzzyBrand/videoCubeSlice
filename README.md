@@ -1,6 +1,8 @@
 # videoCubeSlice
 
-Messing with the temporal and spatial dimensions in video playback
+Messing with the temporal and spatial dimensions in video playback.
+
+Imagine stacking all the frames of a video (2D arrays) into a rectangular prism (a 3D array). A normal playback of the video displays sequential slices of the rectangular prism along the time axis. Imagine instead slice the prism diagonal along the time axis and a spatial axis -- the video playback will be warped in space and time.
 
 ## Requirements
 

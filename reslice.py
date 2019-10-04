@@ -10,7 +10,7 @@ out_filename = 'warped_' + video_filename
 
 # delete the old exported vid if it already exists
 if os.path.isfile(out_filename):
-    answer = input("{} exists. Do you want to replace it? [y/n]\t")
+    answer = input("{} exists. Do you want to replace it? [y/n]\t".format(video_filename))
     if answer.lower() == 'y': os.remove(out_filename)
     else: sys.exit(0)
 
@@ -55,11 +55,11 @@ while(cap.isOpened()):
         # t = ((x/w*2 - 1)**2 + (y/h*2 - 1)**2)*100 + 1
 
         # cone
-        wh = max(w,h)
-        t = np.sqrt(((x - w/2)/wh*2)**2 + ((y-h/2)/wh*2)**2) * d * 0.9 + 1
+        # wh = max(w,h)
+        # t = np.sqrt(((x - w/2)/wh*2)**2 + ((y-h/2)/wh*2)**2) * d * 0.9 + 1
 
         # angled slice
-        # t = (x)/(w) * (i-d)/(630-d) * d
+        t = (x)/(w) * d
 
         # spinning angled slice
         # t = np.sqrt((x/w*2 - 1)**2 + (y/h*2 - 1)**2) * np.sin(np.arctan2(y/h*2 - 1, x/w*2 - 1) + i/d * np.pi * 2) * 100 + 100
